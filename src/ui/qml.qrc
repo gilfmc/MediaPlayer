@@ -1,0 +1,37 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>components/DualActionIcon.qml</file>
+        <file>components/FloatingActionButton.qml</file>
+        <file>components/ActualToolbar.qml</file>
+        <file>components/SeekBar.qml</file>
+        <file>components/SidePanel.qml</file>
+        <file>components/PopupMenu.qml</file>
+        <file>MediaOpenerDialog.qml</file>
+        <file>SettingsWindow.qml</file>
+        <file>components/LibraryListItem.qml</file>
+        <file>SettingsLibraryPage.qml</file>
+        <file>SettingsExtensionsPage.qml</file>
+        <file>components/NavigatorPage.qml</file>
+        <file>pages/HomePage.qml</file>
+        <file>pages/MediaContentPage.qml</file>
+        <file>pages/MediaListPage.qml</file>
+        <file>components/NavigatorPageStack.qml</file>
+        <file>pages/MediaPropertyList.qml</file>
+        <file>components/CircleImage.qml</file>
+        <file>components/circle.png</file>
+        <file>pages/MediaContentInfoEditor.qml</file>
+        <file>dialogs/SubtitleSettingsDialog.qml</file>
+        <file>pages/SearchPage.qml</file>
+        <file>SettingsGeneralPage.qml</file>
+        <file>SettingsAboutPage.qml</file>
+        <file>SettingsAppearancePage.qml</file>
+        <file>components/ColorPicker.qml</file>
+        <file>components/WidgetBaseHorizontalItems.qml</file>
+        <file>components/MediaThumbnail.qml</file>
+        <file>components/WidgetBaseMessage.qml</file>
+        <file>components/WidgetBaseGridItems.qml</file>
+        <file>components/BigButton.qml</file>
+        <file>components/ActionMenu.qml</file>
+    </qresource>
+</RCC>

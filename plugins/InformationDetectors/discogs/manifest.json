@@ -1,0 +1,5 @@
+{
+    "name": "Discogs",
+    "description": "Looks for info about songs on Discogs",
+    "implements": [ "InformationDetector", "InformationSource" ]
+}

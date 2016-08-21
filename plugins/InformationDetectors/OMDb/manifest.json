@@ -1,0 +1,5 @@
+{
+    "name": "OMDb",
+    "description": "Looks for info about TV shows and movies on OMDb",
+    "implements": [ "InformationDetector", "InformationSource" ]
+}
