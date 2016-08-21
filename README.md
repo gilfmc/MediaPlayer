@@ -14,11 +14,13 @@ Still under development. Helped needed to find a great name for it!
 
 Run from the root of the repository:
 
+```sh
 $ mkdir build
 $ cd build
 $ qmake ..
 $ make
 $ sudo make install
+```
 
 Then you should repeat the same steps in the folder of each plugin in order to install them. Without them, the application won't be as interesting.
 
