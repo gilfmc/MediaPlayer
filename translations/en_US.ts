@@ -388,7 +388,7 @@
 <context>
     <name>PlaylistExtraInfoProvider</name>
     <message numerus="yes">
-        <location filename="../src/data/Playlist.h" line="305"/>
+        <location filename="../src/data/Playlist.h" line="307"/>
         <source>%n minute(s)</source>
         <translation>
             <numerusform>%n minute</numerusform>
@@ -396,7 +396,7 @@
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/data/Playlist.h" line="307"/>
+        <location filename="../src/data/Playlist.h" line="309"/>
         <source>%n hour(s)</source>
         <translation>
             <numerusform>%n hour</numerusform>
@@ -404,7 +404,7 @@
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/data/Playlist.h" line="360"/>
+        <location filename="../src/data/Playlist.h" line="362"/>
         <source>%n song(s)</source>
         <translation>
             <numerusform>%n song</numerusform>
@@ -412,7 +412,7 @@
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/data/Playlist.h" line="370"/>
+        <location filename="../src/data/Playlist.h" line="372"/>
         <source>%n episode(s)</source>
         <translation>
             <numerusform>%n episode</numerusform>
@@ -462,7 +462,7 @@
     </message>
     <message>
         <location filename="../src/ui/HomeUiProvider.cpp" line="174"/>
-        <source>This is the first version of this project, a media player that follows the Material Design. // TODO: add survey, etc.</source>
+        <source>Hey! You&apos;ve entered version one of a complete media player based on Material Design. There is still a lot left to accomplish with this project but we&apos;d like to know what you think of the app and Material Design so far. Try listening to some music here while completing &lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLSe9-OsoFIw2tDGu60GunXBKnDf4WJ1YFkk4pFErPEQnFZGMWw/viewform&quot;&gt;this survey&lt;/a&gt;!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

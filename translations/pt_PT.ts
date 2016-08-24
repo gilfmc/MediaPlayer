@@ -484,10 +484,6 @@
         <translation>Benvindo</translation>
     </message>
     <message>
-        <source>This is the first version of this project, a media player that follows the Material Design. // TODO: add survey, etc.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>This app uses GStreamer to load your music and videos, make sure you have all the codecs installed. GStreamer seems to have a few problems where the playback can randomly stops.</source>
         <comment>Shown in a card in the home screen on Linux systems.</comment>
         <translation>Esta aplicação usa o GStreamer para ler as suas músicas e vídeos, verifique se tem todos os codecs instalados. O GStreamer parece ter problemas em que para os vídeos em qualquer momento ao acaso.</translation>
@@ -530,6 +526,10 @@
     <message>
         <source>Entire series</source>
         <translation>Maratona</translation>
+    </message>
+    <message>
+        <source>Hey! You&apos;ve entered version one of a complete media player based on Material Design. There is still a lot left to accomplish with this project but we&apos;d like to know what you think of the app and Material Design so far. Try listening to some music here while completing &lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLSe9-OsoFIw2tDGu60GunXBKnDf4WJ1YFkk4pFErPEQnFZGMWw/viewform&quot;&gt;this survey&lt;/a&gt;!</source>
+        <translation>Esta é a primeira versão de um leitor multimédia completo baseado no &lt;i&gt;Material Design&lt;/i&gt;. Ainda há muito por fazer neste projeto mas gostaríamos de saber o que acha desta aplicação e do Material Design. Aproveite para ouvir música enquanto responde a &lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLSfAOtAI-lpmSDIKig4tv9OFUfi1rV3y3UVaCS5uTyAUkq33wg/viewform&quot;&gt;este questionário&lt;/a&gt;!</translation>
     </message>
 </context>
 <context>

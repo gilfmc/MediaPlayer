@@ -94,7 +94,16 @@ Card {
             style: "subheading"
             color: textColor
 
-            wrapMode: Text.Wrap
+            linkColor: Theme.accentColor
+            onLinkActivated: Qt.openUrlExternally(link)
+				
+				wrapMode: Text.Wrap
+				
+				MouseArea {
+					anchors.fill: parent
+					acceptedButtons: Qt.NoButton
+					cursorShape: parent.hoveredLink ? Qt.PointingHandCursor : Qt.ArrowCursor
+				}
         }
 //    }
 }

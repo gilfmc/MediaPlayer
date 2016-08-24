@@ -171,7 +171,7 @@ class AutomaticPlaylistsWidget : public HomePanelGridWidget {
 
 class WelcomeMessageWidget : public HomePanelMessageWidget {
 	public:
-		WelcomeMessageWidget(HomeUiProvider & provider) : HomePanelMessageWidget(provider, QObject::tr("Welcome"), QObject::tr("This is the first version of this project, a media player that follows the Material Design. // TODO: add survey, etc.")) {}
+		WelcomeMessageWidget(HomeUiProvider & provider) : HomePanelMessageWidget(provider, QObject::tr("Welcome"), QObject::tr("Hey! You've entered version one of a complete media player based on Material Design. There is still a lot left to accomplish with this project but we'd like to know what you think of the app and Material Design so far. Try listening to some music here while completing <a href=\"https://docs.google.com/forms/d/e/1FAIpQLSe9-OsoFIw2tDGu60GunXBKnDf4WJ1YFkk4pFErPEQnFZGMWw/viewform\">this survey</a>!")) {}
 
 		void onCardDismissed() {
 			QStringList paths = QStandardPaths::standardLocations(QStandardPaths::AppConfigLocation);
