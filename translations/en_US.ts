@@ -618,7 +618,7 @@
     </message>
     <message>
         <location filename="../src/ui/SettingsAppearancePage.qml" line="44"/>
-        <source>Size of buttons, texts, etc.</source>
+        <source>Button and text size:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

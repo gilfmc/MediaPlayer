@@ -41,7 +41,7 @@ Page {
 
             Label {
                 style: "dialog"
-                text: qsTr("Size of buttons, texts, etc.")
+                text: qsTr("Button and text size:")
             }
             Slider {
                 property bool canUpdate: false
@@ -159,15 +159,18 @@ Page {
             }
 
             Item {
-                width: 1
+                width: parent.width
                 height: children[0].height
                 Label {
                     anchors {
                         left: parent.left
                         leftMargin: Units.dp(16)
+                        right: parent.right
+                        rightMargin: Units.dp(8)
                     }
                     style: "dialog"
                     text: qsTr("Home contents") + " (" + qsTr("available in a future version") + ")"
+                    wrapMode: Text.WordWrap
                 }
             }
             Repeater {

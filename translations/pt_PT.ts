@@ -59,7 +59,7 @@
     <name>HomePage</name>
     <message>
         <source>Home</source>
-        <translation type="unfinished"></translation>
+        <translation>Início</translation>
     </message>
     <message>
         <source>Music</source>
@@ -529,7 +529,7 @@
     </message>
     <message>
         <source>Hey! You&apos;ve entered version one of a complete media player based on Material Design. There is still a lot left to accomplish with this project but we&apos;d like to know what you think of the app and Material Design so far. Try listening to some music here while completing &lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLSe9-OsoFIw2tDGu60GunXBKnDf4WJ1YFkk4pFErPEQnFZGMWw/viewform&quot;&gt;this survey&lt;/a&gt;!</source>
-        <translation>Esta é a primeira versão de um leitor multimédia completo baseado no &lt;i&gt;Material Design&lt;/i&gt;. Ainda há muito por fazer neste projeto mas gostaríamos de saber o que acha desta aplicação e do Material Design. Aproveite para ouvir música enquanto responde a &lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLSfAOtAI-lpmSDIKig4tv9OFUfi1rV3y3UVaCS5uTyAUkq33wg/viewform&quot;&gt;este questionário&lt;/a&gt;!</translation>
+        <translation>Esta é a primeira versão de um leitor multimédia completo baseado no &lt;i&gt;Material Design&lt;/i&gt;. Ainda há muito por fazer neste projeto mas gostaríamos de saber o que acha desta aplicação e do &lt;i&gt;Material Design&lt;/i&gt;. Aproveite para ouvir música enquanto responde a &lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLSfAOtAI-lpmSDIKig4tv9OFUfi1rV3y3UVaCS5uTyAUkq33wg/viewform&quot;&gt;este questionário&lt;/a&gt;!</translation>
     </message>
 </context>
 <context>
@@ -611,7 +611,7 @@
     </message>
     <message>
         <source>Home</source>
-        <translation type="unfinished"></translation>
+        <translation>Ecrã de início</translation>
     </message>
     <message>
         <source>Primary color</source>
@@ -623,15 +623,15 @@
     </message>
     <message>
         <source>Home contents</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Size of buttons, texts, etc.</source>
-        <translation type="unfinished"></translation>
+        <translation>Conteúdos do ecrã de início</translation>
     </message>
     <message>
         <source>available in a future version</source>
         <translation>disponível numa versão futura</translation>
+    </message>
+    <message>
+        <source>Button and text size:</source>
+        <translation>Tamanho dos textos e botões:</translation>
     </message>
 </context>
 <context>
