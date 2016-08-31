@@ -5,7 +5,7 @@ Still under development. Helped needed to find a great name for it!
 
 ### Dependencies
 
-* Qt 5.4 or higher
+* Qt 5.6 or higher
 * [qml-material](https://github.com/papyros/qml-material)
 * [taglib](https://taglib.github.io/)
 * [libffmpegthumbnailer](https://github.com/dirkvdb/ffmpegthumbnailer)
@@ -23,6 +23,8 @@ $ sudo make install
 ```
 
 Then you should repeat the same steps in the folder of each plugin in order to install them. Without them, the application won't be as interesting.
+
+Note: if qmake fails (or make, because of it), try using qmake-qt5 instead.
 
 ### Licensing
 
