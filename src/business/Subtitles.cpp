@@ -1,5 +1,7 @@
 #include "Subtitles.h"
 
+#include <QtCore/QRegularExpression>
+
 Subtitles::Subtitles() { }
 
 Subtitles::Subtitles(int count, Subtitle * subtitles) : count(count), subtitles(subtitles) { }
@@ -24,6 +26,10 @@ Subtitles * SrtSubtitleLoader::loadSubtitles() {
 	int start, end;
 	QString text = "";
 
+	QRegularExpression fontSize("<font (.* )?size=\"?(\\d*(\\.\\d+)?)\"?.*>");
+	QRegularExpression fontColor("<font (.* )?color=\"?((\\d|[a-f]){3,6})\"?.*>");
+	QRegularExpression specialGroups("{\\\\.*}");
+
 	while(!in.atEnd()) {
 		QString line = in.readLine().trimmed();
 		if(line.length() == 0) {
@@ -44,6 +50,25 @@ Subtitles * SrtSubtitleLoader::loadSubtitles() {
 				part = 2;
 			}
 		} else {
+			line = line.trimmed().replace("\\N", "\\n").replace("\\h", "\302\240");
+
+			// TODO support those groups instead
+			line.remove(specialGroups);
+
+			// quick fixes for font size
+			QRegularExpressionMatch fontMatch = fontSize.match(line);
+			if(fontMatch.hasMatch()) {
+				bool sizeOk;
+				float size = fontMatch.captured(2).toFloat(&sizeOk);
+				if(sizeOk) {
+					line = line.replace(fontMatch.capturedStart(2), fontMatch.capturedLength(2), QString::number(size/3));
+				}
+			}
+			// fix wrong color syntax
+			fontMatch = fontColor.match(line);
+			if(fontMatch.hasMatch()) {
+				line = line.insert(fontMatch.capturedStart(2), "#");
+			}
 			if(text.length() == 0) text = line;
 			else text += "<br>" + line;
 		}
