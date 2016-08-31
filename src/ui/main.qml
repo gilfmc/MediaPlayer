@@ -348,12 +348,13 @@ ApplicationWindow {
                 font.pixelSize: baseFontSize * window.width / ratioSize
                 font.weight: Font.Medium
                 horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.Wrap
 
                 color: "white"
 
                 style: Text.Outline
                 styleColor: "black"
-                textFormat: Text.StyledText
+                textFormat: Text.RichText
             }
 
             LinearGradient {
@@ -1754,12 +1755,17 @@ ApplicationWindow {
                             action: Action {
                                 text: qsTr("Close search")
                                 iconName: "navigation/close"
-                                onTriggered: tSearchBox.text = "";
+                                onTriggered: {
+                                    if(tSearchBox.text.length > 0)
+                                        tSearchBox.text = "";
+                                    else
+                                        navigator.forceActiveFocus();
+                                }
                             }
 
                             color: Theme.dark.iconColor
 
-                            opacity: parent.text.length > 0 ? 0.7 : 0
+                            opacity: parent.text.length > 0 | navigator.depth > 1 ? 0.7 : 0
                             Behavior on opacity { NumberAnimation { duration: 200 } }
                         }
 
