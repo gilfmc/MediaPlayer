@@ -107,6 +107,7 @@ class MainWindow : public QObject {
 		void setSubtitlesEnabled(bool enabled);
 		int subtitleDelay();
 		void setSubtitleDelay(int delay);
+		Q_INVOKABLE
 		void loadSubtitlesFromFile(QUrl file);
 
 		Q_INVOKABLE
