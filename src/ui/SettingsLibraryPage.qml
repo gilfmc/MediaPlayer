@@ -160,31 +160,42 @@ Page {
             property alias includeRecursive: cbRecursive.checked
 
             anchors.fill: parent
+            anchors.leftMargin: -Units.dp(8)
+            anchors.rightMargin: -Units.dp(8)
             anchors.topMargin: Units.dp(8)
             anchors.bottomMargin: Units.dp(8)
 
-            TextField {
-                id: lPath
-                helperText: qsTr("Place")
-                floatingLabel: true
-                //anchors.verticalCenter: bChange.verticalCenter
+            Row {
+                width: parent.width + Units.dp(32)
+                height: Math.max(lPath.implicitHeight + Units.dp(32), bChange.implicitHeight)
                 anchors.left: parent.left
-                anchors.right: bChange.left
-            }
-
-            Button {
-                id: bChange
-                text: qsTr("Change")
                 anchors.right: parent.right
-                //anchors.verticalCenter: lPath.verticalCenter
+                anchors.leftMargin: Units.dp(8)
+                anchors.rightMargin: Units.dp(8)
+
+                TextField {
+                    id: lPath
+                    width: parent.width - bChange.width
+                    helperText: qsTr("Place")
+                    floatingLabel: true
+                    //anchors.verticalCenter: parent.verticalCenter
+                }
+
+                Button {
+                    id: bChange
+                    text: qsTr("Change")
+                    anchors.verticalCenter: lPath.verticalCenter
+                }
             }
 
             CheckBox {
                 id: cbHidden
+                height: implicitHeight - Units.dp(12)
                 text: qsTr("Include hidden folders and files")
             }
             CheckBox {
                 id: cbRecursive
+                height: implicitHeight - Units.dp(12)
                 text: qsTr("Look for files in subfolders")
             }
 

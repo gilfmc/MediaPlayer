@@ -16,7 +16,7 @@ Page {
             Label {
                 id: lRestoreState
                 style: "body2"
-                text: qsTr("When the app opens:")
+                text: qsTr("When the app opens")
                 anchors {
                     fill: parent
                     margins: Units.dp(16)

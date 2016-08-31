@@ -40,8 +40,8 @@ Page {
             }
 
             Label {
-                style: "dialog"
-                text: qsTr("Button and text size:")
+                style: "body2"
+                text: qsTr("Button and text size")
             }
             Slider {
                 property bool canUpdate: false
@@ -71,7 +71,7 @@ Page {
             Item { width: 1; height: Units.dp(8) }
 
             Label {
-                style: "dialog"
+                style: "body2"
                 text: qsTr("Primary color")
             }
             ColorPicker {
@@ -95,7 +95,7 @@ Page {
             Item { width: 1; height: Units.dp(16) }
 
             Label {
-                style: "dialog"
+                style: "body2"
                 text: qsTr("Accent color")
             }
             ColorPicker {
@@ -168,7 +168,7 @@ Page {
                         right: parent.right
                         rightMargin: Units.dp(8)
                     }
-                    style: "dialog"
+                    style: "body2"
                     text: qsTr("Home contents") + " (" + qsTr("available in a future version") + ")"
                     wrapMode: Text.WordWrap
                 }

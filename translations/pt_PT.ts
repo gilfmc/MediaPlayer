@@ -631,7 +631,11 @@
     </message>
     <message>
         <source>Button and text size:</source>
-        <translation>Tamanho dos textos e botões:</translation>
+        <translation type="vanished">Tamanho dos textos e botões:</translation>
+    </message>
+    <message>
+        <source>Button and text size</source>
+        <translation>Tamanho dos textos e botões</translation>
     </message>
 </context>
 <context>
@@ -649,7 +653,7 @@
     </message>
     <message>
         <source>When the app opens:</source>
-        <translation>Quando a aplicação abre:</translation>
+        <translation type="vanished">Quando a aplicação abre:</translation>
     </message>
     <message>
         <source>Keep everything as I left</source>
@@ -658,6 +662,10 @@
     <message>
         <source>Start with an empty playlist</source>
         <translation>Começar com uma lista vazia</translation>
+    </message>
+    <message>
+        <source>When the app opens</source>
+        <translation>Quando a aplicação abre</translation>
     </message>
 </context>
 <context>

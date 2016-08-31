@@ -618,7 +618,7 @@
     </message>
     <message>
         <location filename="../src/ui/SettingsAppearancePage.qml" line="44"/>
-        <source>Button and text size:</source>
+        <source>Button and text size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -632,12 +632,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/SettingsAppearancePage.qml" line="170"/>
+        <location filename="../src/ui/SettingsAppearancePage.qml" line="172"/>
         <source>Home contents</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/SettingsAppearancePage.qml" line="170"/>
+        <location filename="../src/ui/SettingsAppearancePage.qml" line="172"/>
         <source>available in a future version</source>
         <translation type="unfinished"></translation>
     </message>
@@ -659,7 +659,7 @@
     </message>
     <message>
         <location filename="../src/ui/SettingsGeneralPage.qml" line="19"/>
-        <source>When the app opens:</source>
+        <source>When the app opens</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -723,54 +723,54 @@ Do you really want to delete your library?</source>
         <translation>Look for music and videos in</translation>
     </message>
     <message>
-        <location filename="../src/ui/SettingsLibraryPage.qml" line="168"/>
+        <location filename="../src/ui/SettingsLibraryPage.qml" line="179"/>
         <source>Place</source>
         <translation>Place</translation>
     </message>
     <message>
-        <location filename="../src/ui/SettingsLibraryPage.qml" line="177"/>
+        <location filename="../src/ui/SettingsLibraryPage.qml" line="186"/>
         <source>Change</source>
         <translation>Change</translation>
     </message>
     <message>
-        <location filename="../src/ui/SettingsLibraryPage.qml" line="184"/>
+        <location filename="../src/ui/SettingsLibraryPage.qml" line="194"/>
         <source>Include hidden folders and files</source>
         <translation>Include hidden folders and files</translation>
     </message>
     <message>
-        <location filename="../src/ui/SettingsLibraryPage.qml" line="188"/>
+        <location filename="../src/ui/SettingsLibraryPage.qml" line="199"/>
         <source>Look for files in subfolders</source>
         <translation>Look for files in subfolders</translation>
     </message>
     <message>
         <location filename="../src/ui/SettingsLibraryPage.qml" line="93"/>
-        <location filename="../src/ui/SettingsLibraryPage.qml" line="193"/>
+        <location filename="../src/ui/SettingsLibraryPage.qml" line="204"/>
         <source>Cancel</source>
         <translation>Cancel</translation>
     </message>
     <message>
-        <location filename="../src/ui/SettingsLibraryPage.qml" line="196"/>
+        <location filename="../src/ui/SettingsLibraryPage.qml" line="207"/>
         <source>Save</source>
         <translation>Save</translation>
     </message>
     <message>
-        <location filename="../src/ui/SettingsLibraryPage.qml" line="226"/>
+        <location filename="../src/ui/SettingsLibraryPage.qml" line="237"/>
         <source>Configure</source>
         <translation>Configure</translation>
     </message>
     <message>
-        <location filename="../src/ui/SettingsLibraryPage.qml" line="237"/>
+        <location filename="../src/ui/SettingsLibraryPage.qml" line="248"/>
         <source>Remove</source>
         <translation>Remove</translation>
     </message>
     <message>
-        <location filename="../src/ui/SettingsLibraryPage.qml" line="244"/>
+        <location filename="../src/ui/SettingsLibraryPage.qml" line="255"/>
         <source>%1 removed.</source>
         <comment>Shown when the user deletes items in the library settings page.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/SettingsLibraryPage.qml" line="326"/>
+        <location filename="../src/ui/SettingsLibraryPage.qml" line="337"/>
         <source>Add folder to look at</source>
         <translation>Add folder to look at</translation>
     </message>
@@ -882,50 +882,50 @@ Do you really want to delete your library?</source>
 <context>
     <name>main</name>
     <message>
-        <location filename="../src/ui/main.qml" line="404"/>
+        <location filename="../src/ui/main.qml" line="405"/>
         <source>Minimize</source>
         <translation>Minimize</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="409"/>
+        <location filename="../src/ui/main.qml" line="410"/>
         <source>Leave Fullscreen</source>
         <translation>Leave Fullscreen</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="409"/>
+        <location filename="../src/ui/main.qml" line="410"/>
         <source>Go Fullscreen</source>
         <translation>Go Fullscreen</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="414"/>
+        <location filename="../src/ui/main.qml" line="415"/>
         <source>Close</source>
         <translation>Close</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="555"/>
+        <location filename="../src/ui/main.qml" line="556"/>
         <source>Add %1</source>
         <translation>Add %1</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="595"/>
-        <location filename="../src/ui/main.qml" line="2179"/>
+        <location filename="../src/ui/main.qml" line="596"/>
+        <location filename="../src/ui/main.qml" line="2185"/>
         <source>Play</source>
         <translation>Play</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="599"/>
-        <location filename="../src/ui/main.qml" line="1149"/>
+        <location filename="../src/ui/main.qml" line="600"/>
+        <location filename="../src/ui/main.qml" line="1150"/>
         <source>Play after this one</source>
         <translation>Play after this one</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="607"/>
+        <location filename="../src/ui/main.qml" line="608"/>
         <source>Remove “%1” from library</source>
         <translation>Remove “%1” from library</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="698"/>
-        <location filename="../src/ui/main.qml" line="1877"/>
+        <location filename="../src/ui/main.qml" line="699"/>
+        <location filename="../src/ui/main.qml" line="1883"/>
         <source>Library</source>
         <translation>Library</translation>
     </message>
@@ -934,7 +934,7 @@ Do you really want to delete your library?</source>
         <translation type="vanished">Hide</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="724"/>
+        <location filename="../src/ui/main.qml" line="725"/>
         <source>Library settings</source>
         <translation>Library settings</translation>
     </message>
@@ -943,227 +943,227 @@ Do you really want to delete your library?</source>
         <translation type="vanished">Playlist options</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="1055"/>
+        <location filename="../src/ui/main.qml" line="1056"/>
         <source>Add file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="1059"/>
+        <location filename="../src/ui/main.qml" line="1060"/>
         <source>Clear</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="1108"/>
+        <location filename="../src/ui/main.qml" line="1109"/>
         <source>Replace saved playlist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="1074"/>
-        <location filename="../src/ui/main.qml" line="1114"/>
+        <location filename="../src/ui/main.qml" line="1075"/>
+        <location filename="../src/ui/main.qml" line="1115"/>
         <source>Save playlist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="1119"/>
+        <location filename="../src/ui/main.qml" line="1120"/>
         <source>Cancel</source>
         <translation>Cancel</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="1145"/>
+        <location filename="../src/ui/main.qml" line="1146"/>
         <source>Play now</source>
         <translation>Play now</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="2426"/>
+        <location filename="../src/ui/main.qml" line="2432"/>
         <source>Info</source>
         <translation>Info</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="1220"/>
+        <location filename="../src/ui/main.qml" line="1221"/>
         <source>Remove from this list</source>
         <translation>Remove from this list</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="1063"/>
-        <location filename="../src/ui/main.qml" line="1487"/>
+        <location filename="../src/ui/main.qml" line="1064"/>
+        <location filename="../src/ui/main.qml" line="1488"/>
         <source>Open playlist</source>
         <translation>Open playlist</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="440"/>
+        <location filename="../src/ui/main.qml" line="441"/>
         <source>Add</source>
         <comment>Button in the &quot;Add artist/tv show/etc&quot; dialog</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="441"/>
+        <location filename="../src/ui/main.qml" line="442"/>
         <source>Cancel</source>
         <comment>Button in the &quot;Add artist/tv show/etc&quot; dialog</comment>
         <translation type="unfinished">Cancel</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="2636"/>
+        <location filename="../src/ui/main.qml" line="2642"/>
         <source>Back to the video</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="2636"/>
+        <location filename="../src/ui/main.qml" line="2642"/>
         <source>Show navigator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="2755"/>
+        <location filename="../src/ui/main.qml" line="2761"/>
         <source>%1 removed from your library.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="2755"/>
+        <location filename="../src/ui/main.qml" line="2761"/>
         <source>Undo</source>
         <comment>Shown after the user removes an artist/tv show/etc. from their library.</comment>
         <translation type="unfinished">Undo</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="714"/>
+        <location filename="../src/ui/main.qml" line="715"/>
         <source>Refresh library</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="489"/>
-        <location filename="../src/ui/main.qml" line="603"/>
+        <location filename="../src/ui/main.qml" line="490"/>
+        <location filename="../src/ui/main.qml" line="604"/>
         <source>Rename</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="491"/>
+        <location filename="../src/ui/main.qml" line="492"/>
         <source>Save changes</source>
         <comment>Button in the &quot;Rename artist/tv show/etc&quot; dialog</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="492"/>
+        <location filename="../src/ui/main.qml" line="493"/>
         <source>Cancel</source>
         <comment>Button in the &quot;Rename artist/tv show/etc&quot; dialog</comment>
         <translation type="unfinished">Cancel</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="717"/>
+        <location filename="../src/ui/main.qml" line="718"/>
         <source>The library is already being refreshed. Your music and TV shows will show up shortly. You can help it by manually adding your favorite artists and TV shows.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="1149"/>
+        <location filename="../src/ui/main.qml" line="1150"/>
         <source>Repeat once after</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="1161"/>
+        <location filename="../src/ui/main.qml" line="1162"/>
         <source>Info about</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="1195"/>
+        <location filename="../src/ui/main.qml" line="1196"/>
         <source>Information about the song/episode coming in a future version.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="1519"/>
+        <location filename="../src/ui/main.qml" line="1520"/>
         <source>Playlist deleted</source>
         <translation>Playlist deleted</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="1531"/>
+        <location filename="../src/ui/main.qml" line="1532"/>
         <source>Undo</source>
         <translation>Undo</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="1615"/>
+        <location filename="../src/ui/main.qml" line="1616"/>
         <source>Previous list replaced</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="1628"/>
+        <location filename="../src/ui/main.qml" line="1629"/>
         <source>Delete</source>
         <translation>Delete</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="1682"/>
+        <location filename="../src/ui/main.qml" line="1683"/>
         <source>Join both</source>
         <translation>Join both</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="1726"/>
-        <location filename="../src/ui/main.qml" line="1895"/>
+        <location filename="../src/ui/main.qml" line="1727"/>
+        <location filename="../src/ui/main.qml" line="1901"/>
         <source>Search</source>
         <translation>Search</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="1755"/>
+        <location filename="../src/ui/main.qml" line="1756"/>
         <source>Close search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="1904"/>
+        <location filename="../src/ui/main.qml" line="1910"/>
         <source>Settings</source>
         <translation>Settings</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="2126"/>
+        <location filename="../src/ui/main.qml" line="2132"/>
         <source>Subtitles</source>
         <translation>Subtitles</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="2147"/>
+        <location filename="../src/ui/main.qml" line="2153"/>
         <source>Subtitles will look like this.</source>
         <translation>Subtitles will look like this.</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="2179"/>
-        <location filename="../src/ui/main.qml" line="2183"/>
+        <location filename="../src/ui/main.qml" line="2185"/>
+        <location filename="../src/ui/main.qml" line="2189"/>
         <source>long press to change speed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="2183"/>
+        <location filename="../src/ui/main.qml" line="2189"/>
         <source>Pause</source>
         <translation>Pause</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="2254"/>
+        <location filename="../src/ui/main.qml" line="2260"/>
         <source>Speed</source>
         <translation>Speed</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="2326"/>
+        <location filename="../src/ui/main.qml" line="2332"/>
         <source>Previous</source>
         <translation>Previous</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="2352"/>
+        <location filename="../src/ui/main.qml" line="2358"/>
         <source>Replay</source>
         <translation>Replay</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="2370"/>
+        <location filename="../src/ui/main.qml" line="2376"/>
         <source>Next</source>
         <translation>Next</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="2443"/>
+        <location filename="../src/ui/main.qml" line="2449"/>
         <source>Repeat</source>
         <translation>Repeat</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="2468"/>
+        <location filename="../src/ui/main.qml" line="2474"/>
         <source>Shuffle</source>
         <translation>Shuffle</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="2484"/>
+        <location filename="../src/ui/main.qml" line="2490"/>
         <source>Show playlist</source>
         <translation>Show playlist</translation>
     </message>
     <message>
-        <location filename="../src/ui/main.qml" line="2484"/>
+        <location filename="../src/ui/main.qml" line="2490"/>
         <source>Hide playlist</source>
         <translation type="unfinished"></translation>
     </message>
