@@ -46,7 +46,7 @@ ProgressBar {
             }
         }
 
-        acceptedButtons: "LeftButton"
+        acceptedButtons: Qt.LeftButton
         hoverEnabled: true
         //propagateComposedEvents: true
         //onPressed: mouse.accepted = false;
@@ -245,7 +245,7 @@ ProgressBar {
             Label {
                 id: time
 
-                property bool showHours: new Date(maximumValue).getHours() > 0
+                property bool showHours: maximumValue >= 3600000
 
                 anchors {
                     centerIn: parent
@@ -257,13 +257,19 @@ ProgressBar {
 
                 horizontalAlignment: Qt.AlignHCenter
                 verticalAlignment: Qt.AlignVCenter
+
+                function formatTime(timeToFormat) {
+                    var date = new Date(timeToFormat);
+                    var zeroes = "00";
+                    if(time.showHours) return "%1:%2:%3".arg(date.getUTCHours()).arg((zeroes+date.getUTCMinutes()).slice(-zeroes.length)).arg((zeroes+date.getUTCSeconds()).slice(-zeroes.length));
+                    else return "%1:%2".arg((zeroes+date.getUTCMinutes()).slice(-zeroes.length)).arg((zeroes+date.getUTCSeconds()).slice(-zeroes.length));
+                }
+
                 Binding {
                     target: time
                     property: 'text'
                     value: {
-                        var date = new Date((cursor.x + cursor.radius) / progress.width * progress.maximumValue);
-                        //return date.toLocaleTimeString(Qt.locale("GMT+01:00"), showHours ? "H:mm:ss" : "mm:ss");
-                        return Qt.formatTime(date, time.showHours ? "H:mm:ss" : "mm:ss");
+                        return time.formatTime((cursor.x + cursor.radius) / progress.width * progress.maximumValue);
                     }
                     when: tooltip.normalMode
                 }
@@ -271,10 +277,8 @@ ProgressBar {
                     target: time
                     property: 'text'
                     value: {
-                        var date = new Date(oldCursor.position);
-                        //return date.toLocaleTimeString(Qt.locale("GMT+01:00"), showHours ? "H:mm:ss" : "mm:ss");
-                        //return /*"<i>Back to </i>" +*/ Qt.formatTime(date, time.showHours ? "H:mm:ss" : "mm:ss"); // + " <b style=\"padding-left: 4px\">Ctrl+Backspace</b>";
-                        return revertPositionShortcut ? Qt.formatTime(date, time.showHours ? "H:mm:ss" : "mm:ss") + " <i>" + revertPositionShortcut + "</i>" : Qt.formatTime(date, time.showHours ? "H:mm:ss" : "mm:ss");
+                        if(revertPositionShortcut) return time.formatTime(oldCursor.position) + " <i>" + revertPositionShortcut + "</i>";
+                        else return time.formatTime(oldCursor.position);
                     }
                     when: tooltip.oldPositionMode && tooltip.horizontalCenter !== undefined
                 }
