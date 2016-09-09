@@ -5,11 +5,11 @@ TARGET = papyrosmediaplayer
 QT += sql qml quick widgets multimedia concurrent
 
 CONFIG += link_pkgconfig
+PKGCONFIG += taglib
 linux:!android: {
     QT += dbus
-    PKGCONFIG += taglib libffmpegthumbnailer
+    PKGCONFIG += libffmpegthumbnailer
 }
-#PKGCONFIG += libmediainfo
 
 CONFIG += c++14
 
@@ -30,7 +30,6 @@ SOURCES += main.cpp \
     src/business/PluginManager.cpp \
     src/business/MediaInformationManager.cpp \
     src/data/Playlist.cpp \
-#    src/data/TemporaryMediaContent.cpp \
     src/repo/Library.cpp \
     src/repo/MediaPropertyLibrary.cpp \
     src/repo/ArtistsLibrary.cpp \
@@ -66,7 +65,6 @@ lupdate_only {
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
 
-# Default rules for deployment.
 include(deployment.pri)
 
 HEADERS += \
@@ -85,7 +83,6 @@ HEADERS += \
 	src/business/PluginManager.h \
 	src/business/MediaInformationManager.h \
 	src/data/Playlist.h \
-	#    src/data/TemporaryMediaContent.h \
 	src/repo/Library.h \
 	src/repo/MediaPropertyLibrary.h \
 	src/repo/ArtistsLibrary.h \
@@ -121,60 +118,60 @@ linux:!android {
 }
 
 # TODO make it work on Android
-!linux|android {
-	INCLUDEPATH += $$PWD/dependencies/taglib/taglib \
-						$$PWD/dependencies/taglib \
-						$$PWD/dependencies
+#!linux|android {
+#	INCLUDEPATH += $$PWD/dependencies/taglib/taglib \
+#						$$PWD/dependencies/taglib \
+#						$$PWD/dependencies
 
-	SOURCES +=	dependencies/taglib/toolkit/.cpp \
-					dependencies/taglib/asf/.cpp \
-					dependencies/taglib/mpeg/.cpp \
-					dependencies/taglib/ogg/.cpp \
-					dependencies/taglib/ogg/flac/.cpp \
-					dependencies/taglib/flac/.cpp \
-					dependencies/taglib/mpc/.cpp \
-					dependencies/taglib/mp4/.cpp \
-					dependencies/taglib/ogg/vorbis/.cpp \
-					dependencies/taglib/ogg/speex/.cpp \
-					dependencies/taglib/ogg/opus/.cpp \
-					dependencies/taglib/mpeg/id3v2/.cpp \
-					dependencies/taglib/mpeg/id3v2/frames/.cpp \
-					dependencies/taglib/mpeg/id3v1/.cpp \
-					dependencies/taglib/mpeg/ape/.cpp \
-					dependencies/taglib/mpeg/wavpack/.cpp \
-					dependencies/taglib/mpeg/trueaudio/.cpp \
-					dependencies/taglib/mpeg/riff/.cpp \
-					dependencies/taglib/mpeg/riff/aiff/.cpp \
-					dependencies/taglib/mpeg/riff/wav/.cpp \
-					dependencies/taglib/mpeg/mod/.cpp \
-					dependencies/taglib/mpeg/s3m/.cpp \
-					dependencies/taglib/mpeg/it/.cpp \
-					dependencies/taglib/mpeg/xm/.cpp
-	HEADERS +=	dependencies/taglib/toolkit/.h \
-					dependencies/taglib/asf/.h \
-					dependencies/taglib/mpeg/.h \
-					dependencies/taglib/ogg/.h \
-					dependencies/taglib/ogg/flac/.h \
-					dependencies/taglib/flac/.h \
-					dependencies/taglib/mpc/.h \
-					dependencies/taglib/mp4/.h \
-					dependencies/taglib/ogg/vorbis/.h \
-					dependencies/taglib/ogg/speex/.h \
-					dependencies/taglib/ogg/opus/.h \
-					dependencies/taglib/mpeg/id3v2/.h \
-					dependencies/taglib/mpeg/id3v2/frames/.h \
-					dependencies/taglib/mpeg/id3v1/.h \
-					dependencies/taglib/mpeg/ape/.h \
-					dependencies/taglib/mpeg/wavpack/.h \
-					dependencies/taglib/mpeg/trueaudio/.h \
-					dependencies/taglib/mpeg/riff/.h \
-					dependencies/taglib/mpeg/riff/aiff/.h \
-					dependencies/taglib/mpeg/riff/wav/.h \
-					dependencies/taglib/mpeg/mod/.h \
-					dependencies/taglib/mpeg/s3m/.h \
-					dependencies/taglib/mpeg/it/.h \
-					dependencies/taglib/mpeg/xm/.h
-}
+#	SOURCES +=	dependencies/taglib/toolkit/.cpp \
+#					dependencies/taglib/asf/.cpp \
+#					dependencies/taglib/mpeg/.cpp \
+#					dependencies/taglib/ogg/.cpp \
+#					dependencies/taglib/ogg/flac/.cpp \
+#					dependencies/taglib/flac/.cpp \
+#					dependencies/taglib/mpc/.cpp \
+#					dependencies/taglib/mp4/.cpp \
+#					dependencies/taglib/ogg/vorbis/.cpp \
+#					dependencies/taglib/ogg/speex/.cpp \
+#					dependencies/taglib/ogg/opus/.cpp \
+#					dependencies/taglib/mpeg/id3v2/.cpp \
+#					dependencies/taglib/mpeg/id3v2/frames/.cpp \
+#					dependencies/taglib/mpeg/id3v1/.cpp \
+#					dependencies/taglib/mpeg/ape/.cpp \
+#					dependencies/taglib/mpeg/wavpack/.cpp \
+#					dependencies/taglib/mpeg/trueaudio/.cpp \
+#					dependencies/taglib/mpeg/riff/.cpp \
+#					dependencies/taglib/mpeg/riff/aiff/.cpp \
+#					dependencies/taglib/mpeg/riff/wav/.cpp \
+#					dependencies/taglib/mpeg/mod/.cpp \
+#					dependencies/taglib/mpeg/s3m/.cpp \
+#					dependencies/taglib/mpeg/it/.cpp \
+#					dependencies/taglib/mpeg/xm/.cpp
+#	HEADERS +=	dependencies/taglib/toolkit/.h \
+#					dependencies/taglib/asf/.h \
+#					dependencies/taglib/mpeg/.h \
+#					dependencies/taglib/ogg/.h \
+#					dependencies/taglib/ogg/flac/.h \
+#					dependencies/taglib/flac/.h \
+#					dependencies/taglib/mpc/.h \
+#					dependencies/taglib/mp4/.h \
+#					dependencies/taglib/ogg/vorbis/.h \
+#					dependencies/taglib/ogg/speex/.h \
+#					dependencies/taglib/ogg/opus/.h \
+#					dependencies/taglib/mpeg/id3v2/.h \
+#					dependencies/taglib/mpeg/id3v2/frames/.h \
+#					dependencies/taglib/mpeg/id3v1/.h \
+#					dependencies/taglib/mpeg/ape/.h \
+#					dependencies/taglib/mpeg/wavpack/.h \
+#					dependencies/taglib/mpeg/trueaudio/.h \
+#					dependencies/taglib/mpeg/riff/.h \
+#					dependencies/taglib/mpeg/riff/aiff/.h \
+#					dependencies/taglib/mpeg/riff/wav/.h \
+#					dependencies/taglib/mpeg/mod/.h \
+#					dependencies/taglib/mpeg/s3m/.h \
+#					dependencies/taglib/mpeg/it/.h \
+#					dependencies/taglib/mpeg/xm/.h
+#}
 
 TRANSLATIONS += translations/pt_PT.ts \
                 translations/en_US.ts
