@@ -1750,6 +1750,7 @@ ApplicationWindow {
                                 top: parent.top
                                 bottom: parent.bottom
                                 right: parent.right
+                                rightMargin: -Units.dp(2)
                             }
 
                             action: Action {
@@ -1775,8 +1776,8 @@ ApplicationWindow {
                             background: Item {
                                 Rectangle {
                                     anchors.fill: parent
-                                    anchors.leftMargin: -Units.dp(6)
-                                    anchors.rightMargin: -Units.dp(6)
+                                    anchors.leftMargin: -Units.dp(8)
+                                    anchors.rightMargin: -Units.dp(8)
                                     anchors.topMargin: -Units.dp(2)
                                     anchors.bottomMargin: -Units.dp(2)
                                     color: Theme.isDarkColor(toolbarMain.backgroundColor) ? "#44ffffff" : "#44000000"
