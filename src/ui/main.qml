@@ -158,7 +158,7 @@ ApplicationWindow {
 
         readonly property alias videoBehind: window.videoBehind;
         property alias osdOpen: window.osdOpen;
-        property alias bottomBarHeight: barControls.height;
+        readonly property alias bottomBarHeight: barControls.height;
 
         function openAddMediaPropertyDialog(title, group, replacePages) {
             dialogAddPropertyToLibrary.open(title, group, replacePages);
@@ -1940,7 +1940,7 @@ ApplicationWindow {
                 }
             }
 
-            height: Units.gridUnit * 1.5
+            height: Math.round(Units.gridUnit * 1.5)
 
             elevation: 4
             z: 100
@@ -2681,7 +2681,11 @@ ApplicationWindow {
                 if(button && onClicked) {
                     clickCallback = onClicked;
                     buttonText = button;
+                } else {
+                    clickCallback = null;
+                    buttonText = "";
                 }
+
                 duration = time;
                 open(text);
             }
