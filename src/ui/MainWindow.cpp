@@ -448,10 +448,14 @@ void LibraryModel::playAll(const QString & type, int id) {
 void LibraryModel::playAll(MediaProperty * m) {
 	if(m) {
 		Playlist * playlist = context->playlist();
-		if(playlist->mediaCount() == 0) {
+		const int mediaCount = playlist->mediaCount();
+		if(mediaCount == 0) {
 			playlist->setExtraInfoProvider(PlaylistExtraInfoProvider::makeProvider(m));
 		}
 		playlist->addMedia(((MediaContentContainer*)m)->getMediaContents());
+		if(playlist->mediaCount() > 0) {
+			playlist->play(mediaCount);
+		}
 	}
 }
 
