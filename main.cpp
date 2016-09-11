@@ -23,16 +23,17 @@ int main(int argc, char *argv[])
 	//for(int i = 0; i<argc; i++) qDebug() << argv[0];
 	QApplication app(argc, argv);
 	app.setApplicationName("Papyros Media Player");
+	app.setOrganizationName("Gil Castro");
 	app.setApplicationVersion("0.1");
 	app.setWindowIcon(QIcon(":/icon.png"));
 
 	QTranslator qtTranslator;
-	qtTranslator.load("translations/" + QLocale::system().name(),
+	qtTranslator.load("./translations/" + QLocale::system().name(),
 					QLibraryInfo::location(QLibraryInfo::TranslationsPath));
 	app.installTranslator(&qtTranslator);
 
 	QTranslator translator;
-	if(!translator.load("translations/" + QLocale::system().name())) {
+	if(!translator.load("./translations/" + QLocale::system().name())) {
 		translator.load("/usr/share/papyrosmediaplayer/translations/" + QLocale::system().name());
 	}
 	app.installTranslator(&translator);
