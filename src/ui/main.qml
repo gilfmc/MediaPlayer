@@ -155,6 +155,7 @@ ApplicationWindow {
 
     QtObject {
         id: uiState
+        objectName: "uiState"
 
         readonly property alias videoBehind: window.videoBehind;
         property alias osdOpen: window.osdOpen;
@@ -187,6 +188,13 @@ ApplicationWindow {
         function removeFromLibrary(type, id) {
             showMediaPropertyRemovalSnackbar(libraryModel.getMediaPropertyName(type, id));
             libraryModel.removeFromLibrary(type, id);
+        }
+
+        function letUserJoinOldPlaylist() {
+            if(context.playlist.rowCount() > 0) {
+                context.playlist.saveTemporaryPlaylist();
+                snackbarPlaylist.open(qsTr("Previous list replaced"));
+            }
         }
     }
 
@@ -400,21 +408,22 @@ ApplicationWindow {
 //					}
 
                     actions: [
-                        Action {
-                            iconName: "navigation/expand_more"
-                            name: qsTr("Minimize")
-                            onTriggered: visibility = Window.Minimized;
-                        },
+//                        Action {
+//                            iconName: "navigation/expand_more"
+//                            name: qsTr("Minimize")
+//                            onTriggered: visibility = Window.Minimized;
+//                        },
                         Action {
                             iconName: visibility == Window.FullScreen ? "navigation/fullscreen_exit" : "navigation/fullscreen"
                             name: visibility == Window.FullScreen ? qsTr("Leave Fullscreen") : qsTr("Go Fullscreen")
                             onTriggered: toggleFullscreen();
-                        },
-                        Action {
-                            iconName: "navigation/close"
-                            name: qsTr("Close")
-                            onTriggered: close();
                         }
+//                        ,
+//                        Action {
+//                            iconName: "navigation/close"
+//                            name: qsTr("Close")
+//                            onTriggered: close();
+//                        }
                     ]
                 }
             }
@@ -597,7 +606,7 @@ ApplicationWindow {
                             onTriggered: libraryModel.playAll(libraryItemPopupMenu.index);
                         }, Action {
                             iconName: "av/play_arrow"
-                            name: qsTr("Play after this one")
+                            name: qsTr("Play next")
                             enabled: false
                         }, Action {
                             iconName: "content/create"
@@ -1081,7 +1090,15 @@ ApplicationWindow {
                                                 };
                                                 mPlaylistOptions.onClosed.connect(closer);
                                             }
+                                        }, Action {
+                                            text: qsTr("Hide playlist")
+                                            iconName: "hardware/keyboard_tab"
+                                            onTriggered: {
+                                                hidePlaylist();
+                                                bPlaylistAttention.requestAttention();
+                                            }
                                         }
+
                                     ]
                                 }
                             }
@@ -1147,7 +1164,7 @@ ApplicationWindow {
                                     onTriggered: context.playlist.play(lvPlaylistPopupMenu.index);
                                 }, Action {
                                     //iconName: "av/play_arrow"
-                                    name: lvPlaylistPopupMenu.index === context.playlist.currentIndex ? qsTr("Repeat once after") : qsTr("Play after this one")
+                                    name: lvPlaylistPopupMenu.index === context.playlist.currentIndex ? qsTr("Repeat once after") : qsTr("Play next")
                                     checkable: true
                                     readonly property bool check: lvPlaylistPopupMenu.index === context.playlist.indexToPlayAfter
                                     checked: check;
@@ -1611,10 +1628,7 @@ ApplicationWindow {
                                 anchors.fill: parent;
                                 color: spBackground.hasPicture ? Qt.rgba(1,1,1,0.1) : Qt.rgba(0,0,0,0.1);
                                 onClicked: {
-                                    if(_context.playlist.rowCount() > 0) {
-                                        _context.playlist.saveTemporaryPlaylist();
-                                        snackbarPlaylist.open(qsTr("Previous list replaced"));
-                                    }
+                                    uiState.letUserJoinOldPlaylist();
                                     _context.playlist.open(playlist);
                                     lSavedPlaylists.close();
                                 }
@@ -2389,7 +2403,7 @@ ApplicationWindow {
 						left: bNext.right
 						leftMargin: Units.dp(12)
 						right: bOsd.left
-						rightMargin: Units.dp(8)
+                        rightMargin: Units.dp(12)
 						verticalCenter: bPlay.verticalCenter
 					}
 					
@@ -2615,7 +2629,7 @@ ApplicationWindow {
 					color: barControls.iconColor
 					enabled: videoBehind
 					
-					size: Units.dp(52)
+                    size: Units.dp(28) //52)
 					
 					anchors {
 						right: parent.right
@@ -2639,7 +2653,7 @@ ApplicationWindow {
 					}
 					
 					action: Action {
-						iconName: osdOpen ? "navigation/fullscreen_exit" : "navigation/fullscreen" // "action/settings_overscan"
+                        iconSource: osdOpen ? "qrc:/icons/video_interface_black_36px.svg" : "icon://navigation/apps" // "navigation/fullscreen_exit" : "navigation/fullscreen" // "action/settings_overscan"
                         name: osdOpen ? qsTr("Back to the video") : qsTr("Show navigator")
 						onTriggered: osdOpen ? closeOsd() : openOsd()
 					}

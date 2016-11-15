@@ -229,6 +229,10 @@
         <source>Play all</source>
         <translation>Tocar tudo</translation>
     </message>
+    <message>
+        <source>See all</source>
+        <translation>Ver tudo</translation>
+    </message>
 </context>
 <context>
     <name>MediaContentUiModel</name>
@@ -525,11 +529,15 @@
     </message>
     <message>
         <source>Entire series</source>
-        <translation>Maratona</translation>
+        <translation type="vanished">Maratona</translation>
     </message>
     <message>
         <source>Hey! You&apos;ve entered version one of a complete media player based on Material Design. There is still a lot left to accomplish with this project but we&apos;d like to know what you think of the app and Material Design so far. Try listening to some music here while completing &lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLSe9-OsoFIw2tDGu60GunXBKnDf4WJ1YFkk4pFErPEQnFZGMWw/viewform&quot;&gt;this survey&lt;/a&gt;!</source>
         <translation>Esta é a primeira versão de um leitor multimédia completo baseado no &lt;i&gt;Material Design&lt;/i&gt;. Ainda há muito por fazer neste projeto mas gostaríamos de saber o que acha desta aplicação e do &lt;i&gt;Material Design&lt;/i&gt;. Aproveite para ouvir música enquanto responde a &lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLSfAOtAI-lpmSDIKig4tv9OFUfi1rV3y3UVaCS5uTyAUkq33wg/viewform&quot;&gt;este questionário&lt;/a&gt;!</translation>
+    </message>
+    <message>
+        <source>Binge watch</source>
+        <translation>Maratona</translation>
     </message>
 </context>
 <context>
@@ -880,7 +888,7 @@ Quer mesmo apagar a sua biblioteca?</translation>
     <name>main</name>
     <message>
         <source>Minimize</source>
-        <translation>Minimizar</translation>
+        <translation type="vanished">Minimizar</translation>
     </message>
     <message>
         <source>Leave Fullscreen</source>
@@ -892,7 +900,7 @@ Quer mesmo apagar a sua biblioteca?</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>Fechar</translation>
+        <translation type="vanished">Fechar</translation>
     </message>
     <message>
         <source>Library</source>
@@ -912,7 +920,7 @@ Quer mesmo apagar a sua biblioteca?</translation>
     </message>
     <message>
         <source>Play after this one</source>
-        <translation>Tocar depois desta</translation>
+        <translation type="vanished">Tocar depois desta</translation>
     </message>
     <message>
         <source>Info</source>
@@ -1102,6 +1110,10 @@ Quer mesmo apagar a sua biblioteca?</translation>
     <message>
         <source>Show navigator</source>
         <translation>Mostrar navegador</translation>
+    </message>
+    <message>
+        <source>Play next</source>
+        <translation>Tocar depois da atual</translation>
     </message>
 </context>
 </TS>

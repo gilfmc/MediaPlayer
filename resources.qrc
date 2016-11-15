@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>icon.png</file>
+		<file>icons/video_interface_black_36px.svg</file>
     </qresource>
 </RCC>
