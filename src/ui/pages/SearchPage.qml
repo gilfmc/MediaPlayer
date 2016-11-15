@@ -104,7 +104,10 @@ NavigatorPage {
                     delegate: ListItems.BaseListItem {
                         id: listItem
                         height: Units.dp(52)
-                        onClicked: context.playlist.addMedia(id);
+                        onClicked: {
+                            context.playlist.addMedia(id);
+                            context.playlist.play(context.playlist.rowCount()-1);
+                        }
 
                         RowLayout {
                             id: row
@@ -163,6 +166,26 @@ NavigatorPage {
                                     }
                                 //}
                             }
+                            IconButton {
+                                id: subActionItem
+
+                                width: listItem.height
+                                height: width
+
+                                Layout.preferredWidth: listItem.height
+                                Layout.preferredHeight: listItem.height
+                                Layout.maximumWidth: Layout.preferredWidth
+                                Layout.minimumWidth: Layout.preferredWidth
+
+                                iconName: "av/playlist_add"
+
+                                color: listItem.selected ? Theme.primaryColor : Theme.light.iconColor
+                                size: Units.dp(24)
+
+                                onClicked: {
+                                    context.playlist.addMedia(id);
+                                }
+                            }
                             Label {
                                 style: "subheading"
                                 text: title
@@ -170,6 +193,7 @@ NavigatorPage {
                                 //horizontalAlignment: Text.Left
                                 //Layout.alignment: Qt.AlignLeft
                                 Layout.fillWidth: true
+                                Layout.leftMargin: Units.dp(12)
                                 elide: Text.ElideRight
                             }
                             Label {

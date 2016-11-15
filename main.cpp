@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 	QApplication app(argc, argv);
 	app.setApplicationName("Papyros Media Player");
 	app.setOrganizationName("Gil Castro");
-	app.setApplicationVersion("0.1");
+	app.setApplicationVersion("0.2");
 	app.setWindowIcon(QIcon(":/icon.png"));
 
 	QTranslator qtTranslator;

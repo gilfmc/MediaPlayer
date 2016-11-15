@@ -23,6 +23,10 @@ Dropdown {
     width: Units.gu(5)
     height: bOpen.y + bOpen.height + Units.dp(16)
 
+    MouseArea {
+        anchors.fill: parent
+    }
+
     View {
         id: toolbar
 

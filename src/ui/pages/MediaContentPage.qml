@@ -289,7 +289,7 @@ NavigatorPage {
 
                         Button {
                             id: bMore
-                            text: "More"
+                            text: qsTr("See all")
                             //backgroundColor: Theme.accentColor
                             anchors {
                                 rightMargin: Units.dp(16)
@@ -326,7 +326,7 @@ NavigatorPage {
                             delegate: ListItems.BaseListItem {
                                 id: listItem
                                 height: Units.dp(52)
-                                onClicked: ui.model.addToPlaylist(simpleListItem.groupIndex, i)
+                                onClicked: ui.model.play(simpleListItem.groupIndex, i)
 
                                 RowLayout {
                                     id: row
@@ -382,12 +382,31 @@ NavigatorPage {
                                             onClicked: ui.model.play(simpleListItem.groupIndex, i)
                                         //}
                                     }
+                                    IconButton {
+                                        id: subActionItem
+
+                                        width: listItem.height
+                                        height: width
+
+                                        Layout.preferredWidth: listItem.height
+                                        Layout.preferredHeight: listItem.height
+                                        Layout.maximumWidth: Layout.preferredWidth
+                                        Layout.minimumWidth: Layout.preferredWidth
+
+                                        iconName: "av/playlist_add"
+
+                                        color: listItem.selected ? Theme.primaryColor : Theme.light.iconColor
+                                        size: Units.dp(24)
+
+                                        onClicked: ui.model.addToPlaylist(simpleListItem.groupIndex, i)
+                                    }
                                     Label {
                                         style: "subheading"
                                         text: title
 
                                         //horizontalAlignment: Text.Left
                                         //Layout.alignment: Qt.AlignLeft
+                                        Layout.leftMargin: Units.dp(12)
                                         Layout.fillWidth: true
                                     }
                                     Label {
