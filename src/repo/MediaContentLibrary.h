@@ -13,7 +13,7 @@ class MediaContentLibrary;
 #include "Library.h"
 
 typedef struct MediaContentSearchOptions {
-		enum SortOptions { DontSort, LastAddedFirst };
+		enum SortOptions { DontSort, NameAscending, LastAddedFirst };
 
 		QString query;
 		QString type;

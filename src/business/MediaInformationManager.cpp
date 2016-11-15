@@ -17,6 +17,7 @@ void MediaInformationManager::getInformation(MediaProperty * property, QMap<QStr
 
 	const qint64 cTime = QDateTime::currentMSecsSinceEpoch();
 	bool needsToBeRefreshed = false;
+	if(options.cancel) return;
 	QSqlQuery q;
 	q.prepare("SELECT name, value, lastUpdate FROM mediaExtraInfo WHERE type=? AND propertyId=?");
 	q.bindValue(0, property->type());

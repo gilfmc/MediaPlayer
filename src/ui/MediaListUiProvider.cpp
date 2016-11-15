@@ -27,7 +27,7 @@ QVariant SongsListUiProvider::value(int row, int column) {
 	if(row < 0 || row >= songs.length()) return QVariant();
 	
 	switch(column) {
-		case 0: return songs[row]->number();
+		case 0: { int n = songs[row]->number(); if(n == -1) return ""; else return n; }
 		case 1: return songs[row]->name();
 		case 2: return QVariant("");
 		case 3: return formatLength(songs[row]);
@@ -68,7 +68,7 @@ QVariant EpisodesListUiProvider::value(int row, int column) {
 	if(row < 0 || row >= episodes.length()) return QVariant();
 	
 	switch(column) {
-		case 0: return episodes[row]->number();
+		case 0: { int n = episodes[row]->number(); if(n == -1) return ""; else return n; }
 		case 1: return episodes[row]->name();
 		case 2: return episodes[row]->season() ? QVariant(episodes[row]->season()->number()) : QVariant("");
 		case 3: {

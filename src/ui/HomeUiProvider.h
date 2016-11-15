@@ -56,6 +56,13 @@ class HomeUiProvider : public QObject {
 			return new QQmlComponent(&engine, QUrl(path), this);
 		}
 
+		void letUserJoinOldPlaylist() {
+			QObject * item = engine.rootObjects()[0]->findChild<QObject*>("uiState");
+			if(item) {
+				QMetaObject::invokeMethod(item, "letUserJoinOldPlaylist", Qt::AutoConnection);
+			}
+		}
+
 	signals:
 		void widgetCountChanged(int);
 
@@ -84,6 +91,11 @@ class HomePanelListWidget : public QAbstractListModel {
 
 		virtual void onCardDismissed() = 0;
 
+	public slots:
+		virtual void onMediaContentClick(int index, bool play) {
+			Q_UNUSED(index); Q_UNUSED(play);
+		}
+
 	protected:
 		int limit = -1;
 
@@ -96,6 +108,7 @@ class HomePanelGridWidget : public QAbstractListModel {
 	Q_PROPERTY(QQmlComponent * component READ component)
 
 	public:
+		HomePanelGridWidget(const HomePanelGridWidget & from) : provider(from.provider), item(from.item) {}
 		HomePanelGridWidget(HomeUiProvider & provider, QQuickItem * item) : provider(provider), item(item) {}
 
 		virtual QQmlComponent * component() {
@@ -108,6 +121,9 @@ class HomePanelGridWidget : public QAbstractListModel {
 			item->deleteLater();
 		}
 
+		Q_INVOKABLE
+		virtual void onItemClick(int) = 0;
+
 		virtual void onCardDismissed() = 0;
 
 	protected:
@@ -116,6 +132,8 @@ class HomePanelGridWidget : public QAbstractListModel {
 	private:
 		QQuickItem * item;
 };
+
+Q_DECLARE_METATYPE(HomePanelGridWidget*)
 
 class HomePanelMessageWidget : public QObject {
 	Q_OBJECT

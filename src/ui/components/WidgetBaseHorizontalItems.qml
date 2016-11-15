@@ -92,6 +92,9 @@ Card {
                     height: repeater.itemHeight
 
                     MediaThumbnail {
+                        onClick: root.model.onMediaContentClick(index, false);
+                        onPlayButtonClick: root.model.onMediaContentClick(index, true);
+
                         visible: parent.visible
 
                         anchors {

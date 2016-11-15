@@ -95,6 +95,17 @@ class LatestEpisodesWidget : public HomePanelListWidget {
 			for(MediaContent * m : episodes) delete m;
 		}
 
+	public slots:
+		virtual void onMediaContentClick(int i, bool play) {
+			Playlist * playlist = context->playlist();
+			if(playlist) {
+				int indexToPlay = play ? playlist->mediaCount() : 0;
+				// TODO: passing the MediaContent itself will crash the app if done twice because it gets modified
+				playlist->addMedia(episodes.at(i)->id());
+				if(play) playlist->play(indexToPlay);
+			}
+		}
+
 	private:
 		QList<MediaContent*> episodes;
 		MediaPlayerContext * context;
@@ -102,14 +113,70 @@ class LatestEpisodesWidget : public HomePanelListWidget {
 
 class AutomaticPlaylistsWidget : public HomePanelGridWidget {
 	public:
-		AutomaticPlaylistsWidget(HomeUiProvider & provider, MediaPlayerContext * context, QQuickItem * item) : HomePanelGridWidget(provider, item)/*, context(context)*/ {
+		AutomaticPlaylistsWidget(HomeUiProvider & provider, MediaPlayerContext * context, QQuickItem * item) : HomePanelGridWidget(provider, item), context(context) {
 			item->setProperty("title", QObject::tr("Listen to/watch"));
 			item->setProperty("model", QVariant::fromValue(this));
 		}
 
-		void onCardDismissed() {
+		void onItemClick(int index) {
+			switch (index) {
+				case 0: {
+					MediaContentSearchOptions o;
+					o.type = "song";
+					o.sort = MediaContentSearchOptions::NameAscending;
+					provider.letUserJoinOldPlaylist();
+					context->playlist()->clear();
+					context->playlist()->addMedia(context->library()->mediaContents()->search(o));
+					context->play();
+					break;
+				}
+				case 1: {
+					MediaContentSearchOptions o;
+					o.type = "song";
+					provider.letUserJoinOldPlaylist();
+					QList<MediaContent*> media = context->library()->mediaContents()->search(o);
+					std::random_device rd;
+					std::mt19937 rng(rd());
+					std::shuffle(media.begin(), media.end(), rng);
+					long wantedLength = 3600000; // 1 hour
+					int i = 0;
+					for(MediaContent * m : media) {
+						if(m->length() == -1) wantedLength -= 180000;
+						else wantedLength -= m->length();
 
+						i++;
+						if(wantedLength <= 0) break;
+					}
+					QList<MediaContent*> mediaToAdd = media.mid(0, i);
+					const int len = media.length();
+					i++;
+					for(;i < len; i++) {
+						delete media[i];
+					}
+					context->playlist()->clear();
+					context->playlist()->addMedia(mediaToAdd);
+					context->play();
+					break;
+				}
+				case 2: {
+					QList<TvShow*> tvShows = context->library()->tvShows()->naturallySortedList();
+					const int len = tvShows.length();
+					if(len > 0) {
+						TvShow * tvShow = tvShows[qrand() % len];
+						if(tvShow) {
+							provider.letUserJoinOldPlaylist();
+							Playlist * playlist = context->playlist();
+							playlist->clear();
+							playlist->setExtraInfoProvider(PlaylistExtraInfoProvider::makeProvider(tvShow));
+							playlist->addMedia(tvShow->getMediaContents());
+							context->play();
+						}
+					}
+				}
+			}
 		}
+
+		void onCardDismissed() {}
 
 		virtual int rowCount(const QModelIndex & parent) const {
 			return 3;
@@ -124,6 +191,7 @@ class AutomaticPlaylistsWidget : public HomePanelGridWidget {
 			roles[Qt::UserRole] = "_text";
 			roles[Qt::UserRole+1] = "_icon";
 			roles[Qt::UserRole+2] = "columnCount";
+			roles[Qt::UserRole+3] = "_listener";
 			return roles;
 		}
 
@@ -136,9 +204,10 @@ class AutomaticPlaylistsWidget : public HomePanelGridWidget {
 
 			role -= Qt::UserRole;
 			switch(role) {
-				case 0: return i == 0 ? QObject::tr("All songs") : i == 1 ? QObject::tr("Random songs") : QObject::tr("Entire series");
+				case 0: return i == 0 ? QObject::tr("All songs") : i == 1 ? QObject::tr("Random songs") : QObject::tr("Binge watch");
 				case 1: return i == 2 ? "hardware/tv" : "av/library_music";
 				case 2: return 3;
+				case 3: return QVariant::fromValue((HomePanelGridWidget*)this);
 //				case 0: return episodes.at(i)->id();
 //				case 1: return ((Episode*)episodes.at(i))->number();
 //				case 2: {
@@ -167,6 +236,9 @@ class AutomaticPlaylistsWidget : public HomePanelGridWidget {
 
 			return QVariant();
 		}
+
+	private:
+		MediaPlayerContext * context;
 };
 
 class WelcomeMessageWidget : public HomePanelMessageWidget {

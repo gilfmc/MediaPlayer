@@ -201,9 +201,15 @@ void Playlist::onDoneLoading(int i, MediaContent* sender) {
 }
 
 void Playlist::clear() {
-	beginRemoveRows(QModelIndex(), 0, mediaContents.count());
-	// BUG it will crash if we added the same instance of MediaContent more than once (and that happens because of addMedia(MediaContent *) and addMedia(QList<MediaContent*>)
-	for(MediaContent * media : mediaContents) delete media;
+	const int len = mediaContents.count();
+	beginRemoveRows(QModelIndex(), 0, len);
+	for(int i = 0; i < len; i++) {
+		MediaContent * media = mediaContents.at(i);
+		if(media) {
+			delete media;
+			for(int j = i+1; j < len; j++) if(mediaContents.at(j) == media) mediaContents[j] = NULL;
+		}
+	}
 	mediaContents.clear();
 	playlist->clear();
 	endRemoveRows();
@@ -645,7 +651,8 @@ bool Playlist::saveToFile(const QString & url) {
 		QTextStream os(&file);
 		os << "#EXTM3U" << endl;
 
-		if(extraInfo) {
+		const int len = mediaCount();
+		if(extraInfo && len > 0) {
 			os << "#EXTPMPP:E:" << extraInfo->mediaPropertyId() << ":" << extraInfo->mediaPropertyType() << endl;
 		}
 
@@ -653,7 +660,6 @@ bool Playlist::saveToFile(const QString & url) {
 		if(!description().isEmpty()) os << "#EXTPMPP:D:" << description() << endl;
 		if(!imageUrl().isEmpty()) os << "#EXTPMPP:I:" << imageUrl() << endl;
 
-		const int len = mediaCount();
 		for(int i = 0; i < len; i++) {
 			MediaContent * media = mediaAt(i);
 			if(media == NULL) continue;
@@ -801,6 +807,7 @@ bool Playlist::saveState() {
 	//if(mediaCount() == 0) return true;
 
 	QDir dir(QStandardPaths::standardLocations(QStandardPaths::AppDataLocation)[0]);
+	dir.mkpath(".");
 	QFile savedPlaylist(dir.filePath("state.m3u"));
 	if(savedPlaylist.exists()) savedPlaylist.remove();
 	if(!saveToFile(dir.filePath("state.m3u"))) return false;

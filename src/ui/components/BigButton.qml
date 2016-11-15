@@ -3,6 +3,8 @@ import QtQuick 2.5
 import Material 0.2
 
 Item {
+    id: root
+
     width: parent.width/columnCount
     height: Units.dp(48)
 
@@ -44,6 +46,7 @@ Item {
         Ink {
             id: ink
             anchors.fill: parent
+            onClicked: _listener.onItemClick(index);
         }
     }
 }

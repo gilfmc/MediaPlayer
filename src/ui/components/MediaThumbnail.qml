@@ -134,21 +134,23 @@ Card {
 	}
 	
 	IconButton {
-		id: bInfo
+        id: bInfo
 		action: Action {
 			iconName: "action/info"
 			text: qsTr("Info")
 		}
 		size: Units.dp(18)
 		color: "#deffffff"
+        // TODO make it visible once implemented:
 		anchors {
 			right: parent.right
-			rightMargin: ink.containsMouse ? Units.dp(4) : -width
+            rightMargin: -width // ink.containsMouse ? Units.dp(4) : -width
 			top: parent.top
 			topMargin: Units.dp(4)
-		}
-		opacity: ink.containsMouse ? 1 : 0
-		Behavior on opacity { NumberAnimation { duration: 140 } }
-		Behavior on anchors.rightMargin { NumberAnimation { duration: 160; easing.type: Easing.InOutCubic } }
+        }
+        visible: false
+//		opacity: ink.containsMouse ? 1 : 0
+//		Behavior on opacity { NumberAnimation { duration: 140 } }
+//		Behavior on anchors.rightMargin { NumberAnimation { duration: 160; easing.type: Easing.InOutCubic } }
 	}
 }

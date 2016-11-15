@@ -137,6 +137,8 @@ QList<MediaContent*> MediaContentLibrary::search(MediaContentSearchOptions & opt
 	QString query = hasTextToSearch ? "SELECT id, name FROM mediaContents WHERE type=?" : "SELECT id FROM mediaContents WHERE type=?";
 	if(options.sort == MediaContentSearchOptions::LastAddedFirst) {
 		query += " ORDER BY dateAdded DESC, id DESC";
+	} else if(options.sort == MediaContentSearchOptions::NameAscending) {
+		query += " ORDER BY name ASC";
 	}
 	//if(options.limit > 0) query += " LIMIT " + QString::number(options.limit);
 	q.prepare(query);
